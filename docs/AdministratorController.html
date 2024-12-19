@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdministratorController Documentation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #369;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AdministratorController Documentation</h1>
+
+    <p>
+        The AdministratorController class is responsible for managing the administrative functions of the application.
+       Has functionality for adding users, deleting users, and listing all users.
+       This class also interacts with the IdAndPasswords class to read and write user login information
+       and photo albums. This ensures data persistence between sessions.
+        @author Nile Kolenovic
+    </p>
+
+    <h2>Fields</h2>
+
+    <h3>stage</h3>
+    <p>
+        The stage used for managing scenes.
+    </p>
+
+    <h3>scene</h3>
+    <p>
+        The current scene.
+    </p>
+
+    <h3>idAndPasswords</h3>
+    <p>
+        An instance of IdAndPasswords used for retrieving data from a file.
+    </p>
+
+    <h3>loginInfo</h3>
+    <p>
+        A hashmap of usernames and their respective passwords.
+    </p>
+
+    <h3>photoAlbums</h3>
+    <p>
+        A hashmap of usernames and their respective photo albums.
+    </p>
+
+    <!-- ... Add more fields as needed -->
+
+    <h2>FXML Elements</h2>
+
+    <h3>addPasswordField</h3>
+    <p>
+        The password field for adding a new user.
+    </p>
+
+    <!-- ... Add more FXML elements as needed -->
+
+    <h2>Methods</h2>
+
+    <h3>addUserButtonClick(ActionEvent event)</h3>
+    <p>
+        Handles the action when the admin clicks the "Add User" button. Admin is able to set the new user's username and
+        password by typing in the respective text fields. Once this method is called, the "Add User" button changes to "Confirm".
+        If the admin clicks the "Confirm" button, the new user is added. If the username already exists, the user is not added.
+        This method also interacts with the IdAndPasswords class to write the new user to the file.
+    </p>
+    <p>
+        <strong>Parameters:</strong>
+        <code>ActionEvent event</code> - the action event triggered by the user
+    </p>
+    <p>
+        <strong>Author:</strong>
+        Nile Kolenovic
+    </p>
+
+    <h3>deleteUserButtonClick(ActionEvent event)</h3>
+    <p>
+        Handles the action when the admin clicks the "Delete User" button.
+     Admin is able to delete a user by typing in the username of the user in the respective text field.
+      Once this method is called, the "Delete User" button changes to "Confirm".
+      If the admin clicks the "Confirm" button, the user is deleted.
+      If the user does not exist, the text "User [X] does not exist" is displayed in the listAllUsersTextField.
+      If the user is the admin or stock user, the text "Cannot delete admin or stock user" is displayed in the listAllUsersTextField.
+      This method also interacts with the IdAndPasswords class to write the new user to the file.
+    </p>
+    <p>
+        <strong>Parameters:</strong>
+        <code>ActionEvent event</code> - the action event triggered by the user
+    </p>
+    <p>
+        <strong>Author:</strong>
+        Nile Kolenovic
+    </p>
+
+    <h3>listAllUsersButtonClick(ActionEvent event)</h3>
+    <p>
+        Handles the action when the admin clicks the "List Users" button.
+        Admin is able to list all users by clicking the "List Users" button.
+        A list of all users currently in the idAndPasswords hashmap is displayed in the listAllUsersTextField.
+        
+    </p>
+    <p>
+        <strong>Parameters:</strong>
+        <code>ActionEvent event</code> - the action event triggered by the user
+    </p>
+    <p>
+        <strong>Author:</strong>
+        Nile Kolenovic
+    </p>
+   
+
+    <h3>logOutButtonClick(ActionEvent event)</h3>
+    <p>
+        Handles the action when the admin clicks the "Log Out" button.
+     Admin is able to log out by clicking the "Log Out" button.
+     The scene is changed to the Login scene.
+    </p>
+    <p>
+        <strong>Parameters:</strong>
+        <code>ActionEvent event</code> - the action event triggered by the user
+    </p>
+    <p>
+        <strong>Author:</strong>
+        Nile Kolenovic
+    </p>
+    <p>
+        <strong>Throws:</strong>
+        IO Exception - if there is an error reading the file
+    </p>
+
+    
+    <!-- ... Add more methods as needed -->
+
+</body>
+</html>

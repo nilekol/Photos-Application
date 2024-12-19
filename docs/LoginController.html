@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginController Documentation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #369;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LoginController Documentation</h1>
+
+    <p>
+        The LoginController class is responsible for logging in the users.
+        Additionally, if a user does not have an account, there is functionality for signing a user up. 
+        The admin is able to access admin functionality in this class.
+        <strong>Author:</strong> Nile Kolenovic
+    </p>
+
+    <h2>Fields</h2>
+
+    <h3>stage</h3>
+    <p>
+        The stage used for managing scenes.
+    </p>
+
+    <h3>root</h3>
+    <p>
+        The root element for the scene.
+    </p>
+
+    <h3>idAndPasswords</h3>
+    <p>
+        An instance of IdAndPasswords used for retrieving data from a file.
+    </p>
+
+    
+
+    <h2>FXML Elements</h2>
+
+    <h3>loginStatusLabel</h3>
+    <p>
+        A label for displaying login status.
+    </p>
+    
+    <h3>createAccountButton</h3>
+    <p>
+        The button for creating a new user account.
+    </p>
+
+    <h3>loginButton</h3>
+    <p>
+        The button for logging in.
+    </p>
+
+
+    <h3>signUpButton</h3>
+    <p>
+        The button for signing up a new user.
+    </p>
+
+    <h3>passwordField</h3>
+    <p>
+        The text field for entering the user's password.
+    </p>
+
+   
+
+    <h2>Methods</h2>
+
+    <h3>signUpButtonClick(ActionEvent event)</h3>
+    <p>
+        Handles the event when a user clicks the "Sign Up" button.
+        The method gets the text from the usernameField and passwordField.
+        If a user does not exist with such username and password, a new user is created and is written to the loginInfo.ser file.
+        When the sign up is successful, the "Sign up success" is displayed.
+        Otherwise, "Username already exists" is displayed.
+    </p>
+    <p>
+        <strong>Parameters:</strong>
+        <code>ActionEvent event</code> - the action event triggered by the user
+    </p>
+    <p>
+        <strong>Author:</strong>
+        Nile Kolenovic
+    </p>
+
+    <h3>loginButtonClick(ActionEvent event)</h3>
+    <p>
+        Handles the event when a user clicks the "Login" button.
+        The method gets the text from the usernameField and passwordField.
+        If a user exists with such username and password, the user is logged in.
+        Otherwise, "Login failed" is displayed.
+        If the username and password are admin, change the scene to the Administrator scene.
+    </p>
+    <p>
+        <strong>Parameters:</strong>
+        <code>ActionEvent event</code> - the action event triggered by the user
+    </p>
+    <p>
+        <strong>Throws:</strong>
+        IOException - if there is an error during the login process
+    </p>
+    <p>
+        <strong>Author:</strong>
+        Nile Kolenovic
+    </p>
+
+    
+
+</body>
+</html>

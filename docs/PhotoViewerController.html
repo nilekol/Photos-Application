@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoViewerController Documentation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #369;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PhotoViewerController Documentation</h1>
+
+    <p>
+        The PhotoViewerController class is responsible for displaying photos to the user,
+        including photo information such as date, caption, and tags. It provides functionality
+        for managing photo details, navigating through photos, and performing various actions.
+        <strong>Author:</strong> Nile Kolenovic and Xander Kasternakis
+    </p>
+
+    <h2>Fields</h2>
+
+    <h3>userPhoto</h3>
+    <p>
+        The currently displayed photo for the user.
+    </p>
+
+    <h3>username</h3>
+    <p>
+        The username associated with the user.
+    </p>
+
+    <h3>userAlbum</h3>
+    <p>
+        The photo album currently being viewed.
+    </p>
+
+    <h3>photoNum</h3>
+    <p>
+        The current photo number in the album.
+    </p>
+
+    <h3>numPhotos</h3>
+    <p>
+        The total number of photos in the album.
+    </p>
+
+    <h3>stage</h3>
+    <p>
+        The stage used for managing scenes.
+    </p>
+
+    <h3>scene</h3>
+    <p>
+        The scene associated with the stage.
+    </p>
+
+    <h3>root</h3>
+    <p>
+        The root element for the scene.
+    </p>
+
+    <h3>originalPhoto</h3>
+<p>
+    The original version of the displayed photo.
+</p>
+
+<h3>userPhotoAlbums</h3>
+<p>
+    An ArrayList containing the user's photo albums.
+</p>
+
+    <h3>retrievedIdAndPasswords</h3>
+<p>
+    An instance of IdAndPasswords used for retrieving data from a file.
+</p>
+
+
+    <h2>FXML Elements</h2>
+
+    <h3>imageView</h3>
+    <p>
+        An image view for displaying the photo.
+    </p>
+
+    <h3>backButton</h3>
+    <p>
+        A button for navigating back in the application.
+    </p>
+
+
+
+
+
+<h3>menuBar</h3>
+<p>
+    A menu bar containing various application menus.
+</p>
+
+<h3>addTagMenuItem</h3>
+<p>
+    A menu item for adding tags to the current photo.
+</p>
+
+<h3>deleteMenuItem</h3>
+<p>
+    A menu item for deleting the current photo.
+</p>
+
+<h3>captionLabel</h3>
+<p>
+    A label for displaying the caption of the current photo.
+</p>
+
+<h3>dateLabel</h3>
+<p>
+    A label for displaying the date of the current photo.
+</p>
+
+<h3>listOfTags</h3>
+<p>
+    A ListView displaying the tags associated with the current photo.
+</p>
+
+<h3>tagCategories</h3>
+<p>
+    An ArrayList containing tag categories for photos.
+</p>
+
+<h3>observableList</h3>
+<p>
+    An ObservableList used for managing the list of tags in the UI.
+</p>
+
+<h3>addingTagCategory</h3>
+<p>
+    A boolean indicating whether a tag category is being added.
+</p>
+
+<h3>nextPhoto</h3>
+<p>
+    A button for navigating to the next photo in the album.
+</p>
+
+<h3>photoNumber</h3>
+<p>
+    A label displaying the current photo number.
+</p>
+
+<h3>logoutMenuItem</h3>
+<p>
+    A menu item for logging out of the application.
+</p>
+
+<h3>quitApplicationMenuItem</h3>
+<p>
+    A menu item for quitting the application.
+</p>
+
+<h3>prevPhoto</h3>
+<p>
+    A button for navigating to the previous photo in the album.
+</p>
+
+<h3>tagLabel</h3>
+<p>
+    A label indicating the tag associated with the current action.
+</p>
+
+<h3>input</h3>
+<p>
+    A text field for entering tags or captions.
+</p>
+
+<h3>confirmButton</h3>
+<p>
+    A button for confirming actions in the application.
+</p>
+
+<h3>addingCaption</h3>
+<p>
+    A boolean indicating whether a caption is being added.
+</p>
+
+<h3>addingTag</h3>
+<p>
+    A boolean indicating whether a tag is being added.
+</p>
+
+<h3>selectedTag</h3>
+<p>
+    The selected tag for the current action.
+</p>
+
+<h3>hasListener</h3>
+<p>
+    A boolean indicating whether an event listener is attached.
+</p>
+
+
+
+</body>
+<h2>Methods</h2>
+
+    <h3>initializeTags()</h3>
+        <p>
+            Initializes the tag category for the photo viewer screen.
+      The tag categories are initialized to Location, Person, and Event.
+      The user is able to add these tags of these categories to a photo.
+      The user is able to add these tags to a photo.
+     
+
+        </p>
+        
+        <p>
+            <strong>Author:</strong>
+            Nile Kolenovic
+        </p>
+
+        <h3>backButtonClick(ActionEvent event)</h3>
+        <p>
+            This method loads User album and photo page. 
+      Additionally, all changes made to a photo are saved before navigating back
+      to the user album and photo page. 
+      These updates are made by writing to the serializable file and setting 
+      the necessary variables of the User Controller class (userPhotoAlbums, selectedAlbum, username)
+      The photos are then displayed on the screen.
+
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code>ActionEvent event</code> - action event triggered by the user
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Nile Kolenovic and Xander Kasternakis
+        </p>
+
+        <p>
+            <strong>Throws:</strong>
+            IO Exception
+        </p>
+
+        <h3>goToNextPhoto(ActionEvent event)</h3>
+        <p>
+            This method allows for a user to navigate to the next photo in a photo album
+             The user is able to navigate to the next photo by clicking the "Next Photo" button.
+             The next photo and all its information is then displayed to the user.
+
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code>ActionEvent event</code> - action event triggered by the user
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Xander Kasternakis
+        </p>
+
+        <h3>goToPrevPhoto(ActionEvent event)</h3>
+        <p>
+            This method allows for a user to navigate to the previous photo in a photo album
+      The user is able to navigate to the previous photo by clicking the "Previous Photo" button.
+      The previous photo and all its information is then displayed to the user.
+
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code>ActionEvent event</code> - action event triggered by the user
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Xander Kasternakis
+        </p>
+
+        <h3>setUserPhoto(Photo photo, PhotoAlbum album)</h3>
+        <p>
+            Sets the current userPhoto the PhotoViewerController is displaying
+      The user is able to set the current userPhoto by passing in a Photo object and a PhotoAlbum object.
+      Additionally, the method formats the photo and its information and displays it to the user.
+
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code>Photo photo</code> - user's photo
+            <code>PhotoAlbum album</code> - album the photo comes from
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Xander Kasternakis
+        </p>
+
+        <h3>confirmButtonClick(ActionEvent event)</h3>
+        <p>
+            This method has different functionality depending on the state of the application.
+      If the user is adding a caption to a photo, the caption is added to the photo.
+      If the user is adding a tag category, the tag category is added to the 
+      listView of tagCategories the user can add to the photo
+      If the user is adding a tag, the tag is added to the photo. Then, the tags are displayed
+      to the user in the listView of tags.
+      Additionally, the method writes to the loginInfo.ser file to ensure data persistence.
+
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code>ActionEvent event</code> - action event triggered by the user.
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Nile Kolenovic and Xander Kasternakis
+        </p>
+
+        <h3>showTags()</h3>
+        <p>
+            This method displays the tags of a photo to the user.
+      The tags are displayed in a listView.
+      Additioanlly, this method also adds a listener to the each item 
+      in the listView. This listener allows for the user to select a tag.
+      
+      
+
+        </p>
+        
+        <p>
+            <strong>Author:</strong>
+            Nile Kolenovic
+        </p>
+
+        <h3>addCaptionMenuItemClick(String username)</h3>
+        <p>
+            Allows for a new caption to be added. 
+             Sets the "Confirm" button and input field visible. Allows for the 
+             confirmButtonClick method to be executed
+
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code>ActionEvent event</code> - action event triggered by the user
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Xander Kasternakis
+        </p>
+
+        <h3>addTagCategoryMenuItemClick(ActionEvent event)</h3>
+        <p>
+            Allows for a new tag category to be added.
+      Sets the "Confirm" button and input field visible. Allows for the 
+      confirmButtonClick method to be executed
+
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code>ActionEvent event</code> - action event triggered by the user
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Nile Kolenovic
+        </p>
+
+        <h3>addTagMenuItemClick(ActionEvent event)</h3>
+        <p>
+            Allows for a new tag to be added.
+      Sets the "Confirm" button and input field visible. Allows for the 
+      confirmButtonClick method to be executed.
+      Sets the listView to the current list of tag categories that the user
+      can choose from. 
+      Additionally, adds an action listener to each of the listOfTags items
+
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code>ActionEvent event</code> - action event triggered by the user
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Nile Kolenovic
+        </p>
+
+        <h3>deleteMenuItemClick(ActionEvent event)</h3>
+        <p>
+            Deletes the current selected tag.
+      If the selected tag is null or is the empty string, the method 
+      will return.
+      Otherwise, the selected tag will be deleted from the original photo object.
+      The program will display the remaining tags to the user and write to the 
+      loginInfo ser file.
+
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code>ActionEvent event</code> - action event triggered by the user
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Nile Kolenovic
+        </p>
+
+        
+        
+        
+        <h3>quitApplicationMenuItemClick(ActionEvent event)</h3>
+        <p>
+            Kills the application. 
+      Before killing the application, this method writes to the 
+      loginInfo.ser file. This ensures data persistence
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code>ActionEvent event</code> - action event triggered by user
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Nile Kolenovic
+        </p>
+
+        <h3>logoutMenuItemClick(ActionEvent event)</h3>
+        <p>
+            Handles the action when the admin clicks the "Log Out" menu item.
+      User is able to log out by clicking the "Log Out" menu item.
+      The scene is changed to the Login scene.
+
+        </p>
+        <p>
+            <strong>Parameters:</strong>
+            <code> ActionEvent event</code> - action event triggered by user
+        </p>
+
+        <p>
+            <strong>Throws:</strong>
+            IO Exception
+        </p>
+        <p>
+            <strong>Author:</strong>
+            Nile Kolenovic
+        </p>
+
+    </body>
+</html>
+
+

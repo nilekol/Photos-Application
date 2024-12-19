@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Documentation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #369;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Photo Documentation</h1>
+
+    <p>
+        The Photo class is responsible for storing the information for each photo.
+        This class is also responsible for storing the tags, dates, and captions for each photo.
+        This class also has methods for getting the date of a photo.
+        <strong>Author:</strong> Nile Kolenovic and Xander Kasternakis
+    </p>
+
+    <h2>Fields</h2>
+
+    <h3>path</h3>
+    <p>
+        The file path location of the photo on the user's machine.
+    </p>
+
+    <h3>caption</h3>
+    <p>
+        The caption associated with the photo.
+    </p>
+
+    <h3>tags</h3>
+    <p>
+        An ArrayList of strings representing tags associated with the photo.
+    </p>
+
+    <h3>date</h3>
+    <p>
+        A Calendar object representing the date of the last modification of the photo on the user's machine.
+    </p>
+
+    <!-- ... Add more fields as needed -->
+
+    <h2>Constructor</h2>
+
+    <h3>Photo(String path)</h3>
+    <p>
+        The constructor takes in a path and creates a new photo object.
+        The path is the file path location of the photo on the user's machine.
+    </p>
+    <p>
+        <strong>Parameters:</strong>
+        <code>String path</code> - path of the photo
+    </p>
+    <p>
+        <strong>Author:</strong>
+        Nile Kolenovic and Xander Kasternakis
+    </p>
+
+    <h2>Methods</h2>
+
+    <h3>getDate()</h3>
+    <p>
+        Gets the date of the photo object.
+        The date refers to the last modification of the photo on the user's machine.
+    </p>
+    <p>
+        <strong>Returns:</strong>
+        String - date of the photo object in the format MM/DD/YYYY HH:MM AM/PM
+    </p>
+    <p>
+        <strong>Author:</strong>
+        Xander Kasternakis
+    </p>
+
+    <!-- ... Add more methods as needed -->
+
+</body>
+</html>
